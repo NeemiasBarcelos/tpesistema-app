@@ -7,7 +7,7 @@ export default function Page() {
             Coming Soon
           </h1>
           <p className='text-xl text-muted-foreground'>
-            We're working hard to bring you something amazing.
+            We &apos;re working hard to bring you something amazing.
           </p>
         </div>
       </div>
