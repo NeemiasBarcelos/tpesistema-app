@@ -1,0 +1,23 @@
+# docker-compose
+
+services:
+  api:
+    container_name: api
+    build:
+      context: .
+      # crio o contexto caso queira criar um para desenvolvimento
+      dockerfile: Dockerfile
+    ports:
+      - '${PORT}:${PORT}'
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: $DATABASE_URL
+    networks:
+      - network-bridge
+      # Gosto de usa o pnpm em tudo mas é tranquilo usar o yarn
+    command: ['pnpm', 'start']
+
+networks:
+  network-bridge:
+    driver: bridge
